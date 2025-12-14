@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:pobe_new/features/auth/widgets/auth_google_button.dart';
 import 'package:provider/provider.dart';
@@ -47,6 +49,8 @@ class LoginPage extends StatelessWidget {
                             backgroundColor: Colors.red,
                           ),
                         );
+                      } else {
+                        Navigator.pushReplacementNamed(context, AppRouter.home);
                       }
                     },
                   ),

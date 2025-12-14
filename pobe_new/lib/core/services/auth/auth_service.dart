@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'package:pobe_new/constants/api_constants.dart';
 
 class AuthTokens {
   AuthTokens({required this.access, required this.refresh});
@@ -19,7 +20,7 @@ class AuthTokens {
 class AuthService {
   AuthService({http.Client? client})
       : _client = client ?? http.Client(),
-        _baseUrl = 'http://192.168.1.49:8000';
+        _baseUrl = ApiConstants.authBaseUrl;
 
   final http.Client _client;
   final String _baseUrl;

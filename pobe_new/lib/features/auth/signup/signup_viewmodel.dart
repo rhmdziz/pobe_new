@@ -14,7 +14,7 @@ class SignupViewModel extends ChangeNotifier {
     required String password,
     String? email,
   }) async {
-    isLoadinsg = true;
+    isLoading = true;
     error = null;
     notifyListeners();
 
