@@ -20,7 +20,7 @@ class NewsService {
     }
 
     final response = await _client.get(
-      Uri.parse(ApiConstants.newsBaseUrl),
+      Uri.parse(ApiConstants.newsUrl),
       headers: {'Authorization': 'Bearer $accessToken'},
     );
 

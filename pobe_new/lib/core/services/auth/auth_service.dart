@@ -18,18 +18,14 @@ class AuthTokens {
 }
 
 class AuthService {
-  AuthService({http.Client? client})
-      : _client = client ?? http.Client(),
-        _baseUrl = ApiConstants.authBaseUrl;
+  AuthService({http.Client? client}) : _client = client ?? http.Client();
 
   final http.Client _client;
-  final String _baseUrl;
-
-  Uri _uri(String path) => Uri.parse('$_baseUrl$path');
+  Uri _uri(String url) => Uri.parse(url);
 
   Future<AuthTokens> login(String username, String password) async {
     final response = await _client.post(
-      _uri('/api/token/'),
+      _uri(ApiConstants.authTokenUrl),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'username': username, 'password': password}),
     );
@@ -48,7 +44,7 @@ class AuthService {
     String? email,
   }) async {
     final response = await _client.post(
-      _uri('/api/signup/'),
+      _uri(ApiConstants.signupUrl),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({
         'username': username,

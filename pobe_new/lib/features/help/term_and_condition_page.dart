@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pobe_new/features/home/widgets/news_header.dart';
+import 'package:pobe_new/features/home/widgets/app_header.dart';
 
 class TermPage extends StatelessWidget {
   const TermPage({super.key});

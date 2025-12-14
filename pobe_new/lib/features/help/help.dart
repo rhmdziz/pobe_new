@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pobe_new/features/help/term_and_condition_page.dart';
-import 'package:pobe_new/features/home/widgets/news_header.dart';
+import 'package:pobe_new/features/home/widgets/app_header.dart';
 
 class HelpPage extends StatelessWidget {
   const HelpPage({super.key});

@@ -20,7 +20,7 @@ class NewsCommentService {
     }
 
     final response = await _client.get(
-      Uri.parse(ApiConstants.newsCommentsBaseUrl),
+      Uri.parse(ApiConstants.newsCommentsUrl),
       headers: {'Authorization': 'Bearer $token'},
     );
 
@@ -46,7 +46,7 @@ class NewsCommentService {
     }
 
     final response = await _client.post(
-      Uri.parse(ApiConstants.newsCommentsBaseUrl),
+      Uri.parse(ApiConstants.newsCommentsUrl),
       headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer $token',

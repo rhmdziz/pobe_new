@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pobe_new/app/app_router.dart';
 
 class GetDestinySection extends StatelessWidget {
   const GetDestinySection({super.key});
@@ -15,7 +16,11 @@ class GetDestinySection extends StatelessWidget {
         children: [
           GestureDetector(
             onTap: () {
-              
+              Navigator.pushNamed(
+                context,
+                AppRouter.destinationSet,
+                arguments: {'startPoint': '', 'endPoint': ''},
+              );
             },
             child: Container(
               height: 60,
@@ -55,7 +60,11 @@ class GetDestinySection extends StatelessWidget {
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
-                     
+                      Navigator.pushNamed(
+                        context,
+                        AppRouter.destinationSet,
+                        arguments: {'startPoint': '', 'endPoint': ''},
+                      );
                     },
                     child: Container(
                       height: 40,
@@ -80,7 +89,14 @@ class GetDestinySection extends StatelessWidget {
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
-                    
+                      Navigator.pushNamed(
+                        context,
+                        AppRouter.destinationSet,
+                        arguments: {
+                          'startPoint': 'INTERMODA',
+                          'endPoint': 'THE BREEZE',
+                        },
+                      );
                     },
                     child: Container(
                       height: 40,

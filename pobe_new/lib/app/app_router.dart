@@ -11,6 +11,9 @@ import 'package:pobe_new/features/home/news/viewmodels/news_detail_viewmodel.dar
 import 'package:pobe_new/features/splash/splash_page.dart';
 import 'package:pobe_new/core/services/news/news_comment_service.dart';
 import 'package:pobe_new/data/models/news.dart';
+import 'package:pobe_new/features/bus/destination_set.dart';
+import 'package:pobe_new/core/services/bus/halte_service.dart';
+import 'package:pobe_new/features/bus/viewmodels/destination_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class AppRouter {
@@ -25,6 +28,9 @@ class AppRouter {
 
   static const String help = '/help';
   static const String termsAndConditions = '/help/terms_and_conditions';
+
+  static const String bus = '/bus';
+  static const String destinationSet = '/bus/destination_set';
 
   static String get initialRoute => splash;
 
@@ -62,6 +68,19 @@ class AppRouter {
         return MaterialPageRoute(
             builder: (_) => const TermPage());
 
+      case destinationSet:
+        final args = settings.arguments;
+        if (args is! Map<String, String>) {
+          return _unknownRoute();
+        }
+        final startPoint = args['startPoint'] ?? '';
+        final endPoint = args['endPoint'] ?? '';
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (_) => DestinationViewModel(HalteService()),
+            child: DestinationSet(startPoint: startPoint, endPoint: endPoint),
+          ),
+        );
 
       default:
         return _unknownRoute();

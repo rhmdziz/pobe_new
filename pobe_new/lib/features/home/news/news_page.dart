@@ -4,7 +4,7 @@ import 'package:pobe_new/app/app_router.dart';
 import 'package:pobe_new/data/models/news.dart';
 import 'package:pobe_new/features/home/news/viewmodels/news_viewmodel.dart';
 import 'package:pobe_new/features/home/widgets/error_state.dart';
-import 'package:pobe_new/features/home/widgets/news_header.dart';
+import 'package:pobe_new/features/home/widgets/app_header.dart';
 import 'package:provider/provider.dart';
 
 class NewsListPage extends StatefulWidget {
