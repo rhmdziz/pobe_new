@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pobe_new/app/app_router.dart';
 
 class HomeHeaderSection extends StatelessWidget {
   const HomeHeaderSection({super.key});
@@ -10,7 +11,7 @@ class HomeHeaderSection extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {
-            
+            Navigator.pushNamed(context, AppRouter.profile);
           },
           icon: const Icon(
             Icons.account_circle_outlined,

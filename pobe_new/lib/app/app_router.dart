@@ -8,6 +8,8 @@ import 'package:pobe_new/features/home/dashboard/dashboard_page.dart';
 import 'package:pobe_new/features/home/news/news_detail_page.dart';
 import 'package:pobe_new/features/home/news/news_page.dart';
 import 'package:pobe_new/features/home/news/viewmodels/news_detail_viewmodel.dart';
+import 'package:pobe_new/features/home/profile/profile_page.dart';
+import 'package:pobe_new/features/home/profile/profile_viewmodel.dart';
 import 'package:pobe_new/features/splash/splash_page.dart';
 import 'package:pobe_new/core/services/news/news_comment_service.dart';
 import 'package:pobe_new/data/models/news.dart';
@@ -17,6 +19,8 @@ import 'package:pobe_new/features/bus/viewmodels/destination_viewmodel.dart';
 import 'package:pobe_new/features/report/report_page.dart';
 import 'package:pobe_new/features/report/report_viewmodel.dart';
 import 'package:pobe_new/core/services/report/report_service.dart';
+import 'package:pobe_new/core/services/profile/profile_service.dart';
+import 'package:pobe_new/core/storage/auth_storage.dart';
 import 'package:provider/provider.dart';
 
 class AppRouter {
@@ -29,6 +33,7 @@ class AppRouter {
   static const String news = '/news';
   static const String newsDetail = '/news/detail';
   static const String report = '/report';
+  static const String profile = '/profile';
 
   static const String help = '/help';
   static const String termsAndConditions = '/help/terms_and_conditions';
@@ -76,6 +81,16 @@ class AppRouter {
           builder: (_) => ChangeNotifierProvider(
             create: (_) => ReportViewModel(ReportService()),
             child: const ReportPage(),
+          ),
+        );
+      case profile:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => ProfileViewModel(
+              ProfileService(storage: context.read<AuthStorage>()),
+              context.read<AuthStorage>(),
+            ),
+            child: const ProfilePage(),
           ),
         );
 

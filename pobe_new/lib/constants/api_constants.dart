@@ -10,6 +10,7 @@ class ApiConstants {
   static const String busRoutesUrl = '$_baseHost/busroutes/';
   static const String busSchedulesUrl = '$_baseHost/busscheduls/';
   static const String reportsUrl = '$_baseHost/reports/';
+  static const String userProfileUrl = '$_baseHost/api/users/me/';
 
   // Auth endpoints
   static const String authTokenUrl = '$_baseHost/api/token/';
