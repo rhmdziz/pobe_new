@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pobe_new/data/models/aqi_response.dart';
 import 'package:pobe_new/features/home/dashboard/viewmodels/aqi_viewmodel.dart';
 import 'package:provider/provider.dart';
 

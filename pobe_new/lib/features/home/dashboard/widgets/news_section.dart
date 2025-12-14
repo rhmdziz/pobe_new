@@ -45,7 +45,9 @@ class NewsSection extends StatelessWidget {
             ),
             Expanded(
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, AppRouter.report);
+                },
                 child: Container(
                   height: 100,
                   padding: const EdgeInsets.symmetric(

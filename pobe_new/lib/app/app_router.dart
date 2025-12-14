@@ -14,6 +14,9 @@ import 'package:pobe_new/data/models/news.dart';
 import 'package:pobe_new/features/bus/destination_set.dart';
 import 'package:pobe_new/core/services/bus/halte_service.dart';
 import 'package:pobe_new/features/bus/viewmodels/destination_viewmodel.dart';
+import 'package:pobe_new/features/report/report_page.dart';
+import 'package:pobe_new/features/report/report_viewmodel.dart';
+import 'package:pobe_new/core/services/report/report_service.dart';
 import 'package:provider/provider.dart';
 
 class AppRouter {
@@ -25,6 +28,7 @@ class AppRouter {
   static const String home = '/home';
   static const String news = '/news';
   static const String newsDetail = '/news/detail';
+  static const String report = '/report';
 
   static const String help = '/help';
   static const String termsAndConditions = '/help/terms_and_conditions';
@@ -67,6 +71,13 @@ class AppRouter {
       case termsAndConditions:
         return MaterialPageRoute(
             builder: (_) => const TermPage());
+      case report:
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (_) => ReportViewModel(ReportService()),
+            child: const ReportPage(),
+          ),
+        );
 
       case destinationSet:
         final args = settings.arguments;
