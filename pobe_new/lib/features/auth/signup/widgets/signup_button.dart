@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pobe_new/features/auth/widgets/auth_primary_button.dart';
 
-class LoginButton extends StatelessWidget {
+class SignupButton extends StatelessWidget {
   final bool isLoading;
   final VoidCallback onPressed;
 
-  const LoginButton({
+  const SignupButton({
     super.key,
     required this.isLoading,
     required this.onPressed,
@@ -14,7 +14,7 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthPrimaryButton(
-      label: 'Login',
+      label: 'Sign Up',
       isLoading: isLoading,
       onPressed: onPressed,
     );

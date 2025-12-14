@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pobe_new/core/storage/auth_storage.dart';
-import 'package:pobe_new/data/auth/auth_service.dart';
+import 'package:pobe_new/core/services/auth/auth_service.dart';
 
 enum AuthStatus { unknown, authenticated, unauthenticated }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pobe_new/features/auth/widgets/auth_text_field.dart';
 
 class UsernameField extends StatelessWidget {
   final TextEditingController controller;
@@ -7,9 +8,9 @@ class UsernameField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return AuthTextField(
       controller: controller,
-      decoration: const InputDecoration(hintText: 'Username'),
+      hintText: 'Username',
     );
   }
 }
