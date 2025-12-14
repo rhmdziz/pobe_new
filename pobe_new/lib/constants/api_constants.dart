@@ -19,4 +19,16 @@ class ApiConstants {
   // AQI endpoints
   static const String aqiBaseUrl = 'https://api.waqi.info/feed/A417100/';
   static const String aqiToken = '9f59127ff5cd375ecfd300353d1e7e5bbf73ce2f';
+
+  // Category endpoints (adjust as needed to match backend)
+  static const String toGoBaseUrl = _baseHost;
+  static const String toGoReviewPath = '/foodreviews/';
+  static const Map<String, String> toGoEndpoints = {
+    'Food': '/foods/',
+    'Shopping': '/shoppings/',
+    'Mall': '/malls/',
+    'Hospital': '/hospitals/',
+    'Sport': '/sports/',
+    'Entertain': '/entertains/',
+  };
 }

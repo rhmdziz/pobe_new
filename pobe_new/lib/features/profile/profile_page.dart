@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pobe_new/app/app_router.dart';
-import 'package:pobe_new/features/home/profile/profile_viewmodel.dart';
+import 'package:pobe_new/features/profile/profile_viewmodel.dart';
 import 'package:pobe_new/features/home/widgets/app_header.dart';
 import 'package:provider/provider.dart';
 
@@ -149,9 +149,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 20,
-                              )
+                              const SizedBox(height: 20)
                             ],
                           ),
                         ),

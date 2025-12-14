@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pobe_new/features/bus/viewmodels/destination_result_viewmodel.dart';
+import 'package:pobe_new/features/home/bus/viewmodels/destination_result_viewmodel.dart';
 import 'package:pobe_new/features/home/widgets/app_header.dart';
 import 'package:provider/provider.dart';
 import 'package:pobe_new/data/models/bus_schedule.dart';

@@ -5,22 +5,28 @@ import 'package:pobe_new/features/auth/signup/signup_splash.dart';
 import 'package:pobe_new/features/help/help.dart';
 import 'package:pobe_new/features/help/term_and_condition_page.dart';
 import 'package:pobe_new/features/home/dashboard/dashboard_page.dart';
-import 'package:pobe_new/features/home/news/news_detail_page.dart';
-import 'package:pobe_new/features/home/news/news_page.dart';
-import 'package:pobe_new/features/home/news/viewmodels/news_detail_viewmodel.dart';
-import 'package:pobe_new/features/home/profile/profile_page.dart';
-import 'package:pobe_new/features/home/profile/profile_viewmodel.dart';
+import 'package:pobe_new/features/home/category/to_go_page.dart';
+import 'package:pobe_new/features/home/category/to_go_viewmodel.dart';
+import 'package:pobe_new/features/home/category/to_go_detail_page.dart';
+import 'package:pobe_new/features/home/category/to_go_detail_viewmodel.dart';
+import 'package:pobe_new/features/news/news_detail_page.dart';
+import 'package:pobe_new/features/news/news_page.dart';
+import 'package:pobe_new/features/news/viewmodels/news_detail_viewmodel.dart';
+import 'package:pobe_new/features/profile/profile_page.dart';
+import 'package:pobe_new/features/profile/profile_viewmodel.dart';
 import 'package:pobe_new/features/splash/splash_page.dart';
 import 'package:pobe_new/core/services/news/news_comment_service.dart';
 import 'package:pobe_new/data/models/news.dart';
-import 'package:pobe_new/features/bus/destination_set.dart';
+import 'package:pobe_new/features/home/bus/destination_set.dart';
 import 'package:pobe_new/core/services/bus/halte_service.dart';
-import 'package:pobe_new/features/bus/viewmodels/destination_viewmodel.dart';
-import 'package:pobe_new/features/report/report_page.dart';
-import 'package:pobe_new/features/report/report_viewmodel.dart';
+import 'package:pobe_new/features/home/bus/viewmodels/destination_viewmodel.dart';
+import 'package:pobe_new/features/home/report/report_page.dart';
+import 'package:pobe_new/features/home/report/report_viewmodel.dart';
 import 'package:pobe_new/core/services/report/report_service.dart';
 import 'package:pobe_new/core/services/profile/profile_service.dart';
+import 'package:pobe_new/core/services/category/to_go_service.dart';
 import 'package:pobe_new/core/storage/auth_storage.dart';
+import 'package:pobe_new/data/models/to_go_item.dart';
 import 'package:provider/provider.dart';
 
 class AppRouter {
@@ -33,6 +39,8 @@ class AppRouter {
   static const String news = '/news';
   static const String newsDetail = '/news/detail';
   static const String report = '/report';
+  static const String category = '/category';
+  static const String categoryDetail = '/category/detail';
   static const String profile = '/profile';
 
   static const String help = '/help';
@@ -81,6 +89,34 @@ class AppRouter {
           builder: (_) => ChangeNotifierProvider(
             create: (_) => ReportViewModel(ReportService()),
             child: const ReportPage(),
+          ),
+        );
+      case category:
+        final args = settings.arguments;
+        if (args is! String || args.isEmpty) {
+          return _unknownRoute();
+        }
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (_) => ToGoViewModel(
+              ToGoService(storage: _.read<AuthStorage>()),
+              category: args,
+            ),
+            child: ToGoPage(category: args),
+          ),
+        );
+      case categoryDetail:
+        final args = settings.arguments;
+        if (args is! ToGoItem) {
+          return _unknownRoute();
+        }
+        return MaterialPageRoute(
+          builder: (_) => ChangeNotifierProvider(
+            create: (context) => ToGoDetailViewModel(
+              ToGoService(storage: context.read<AuthStorage>()),
+              item: args,
+            ),
+            child: const ToGoDetailPage(),
           ),
         );
       case profile:

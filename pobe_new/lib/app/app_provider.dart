@@ -6,7 +6,7 @@ import 'package:pobe_new/core/services/news/news_service.dart';
 import 'package:pobe_new/features/auth/login/login_viewmodel.dart';
 import 'package:pobe_new/features/auth/signup/signup_viewmodel.dart';
 import 'package:pobe_new/features/home/dashboard/viewmodels/aqi_viewmodel.dart';
-import 'package:pobe_new/features/home/news/viewmodels/news_viewmodel.dart';
+import 'package:pobe_new/features/news/viewmodels/news_viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 

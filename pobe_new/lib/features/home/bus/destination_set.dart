@@ -3,9 +3,9 @@ import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:pobe_new/core/services/bus/bus_schedule_service.dart';
 import 'package:pobe_new/core/services/bus/halte_service.dart';
 import 'package:pobe_new/data/models/halte.dart';
-import 'package:pobe_new/features/bus/destination_result.dart';
-import 'package:pobe_new/features/bus/viewmodels/destination_result_viewmodel.dart';
-import 'package:pobe_new/features/bus/viewmodels/destination_viewmodel.dart';
+import 'package:pobe_new/features/home/bus/destination_result.dart';
+import 'package:pobe_new/features/home/bus/viewmodels/destination_result_viewmodel.dart';
+import 'package:pobe_new/features/home/bus/viewmodels/destination_viewmodel.dart';
 import 'package:pobe_new/features/home/widgets/app_header.dart';
 import 'package:provider/provider.dart';
 

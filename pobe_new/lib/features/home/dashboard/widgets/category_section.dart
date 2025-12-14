@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pobe_new/app/app_router.dart';
 
 class CategoriesSection extends StatelessWidget {
   const CategoriesSection({super.key});
@@ -13,7 +14,7 @@ class CategoriesSection extends StatelessWidget {
   ];
 
   void _navigateToCategory(BuildContext context, String category) {
-    // TODO: implement navigation to category detail/list
+    Navigator.pushNamed(context, AppRouter.category, arguments: category);
   }
 
   @override

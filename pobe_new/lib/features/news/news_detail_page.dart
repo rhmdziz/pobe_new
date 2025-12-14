@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pobe_new/data/models/news.dart';
 import 'package:pobe_new/data/models/news_comment.dart';
-import 'package:pobe_new/features/home/news/viewmodels/news_detail_viewmodel.dart';
+import 'package:pobe_new/features/news/viewmodels/news_detail_viewmodel.dart';
 import 'package:pobe_new/features/home/widgets/error_state.dart';
 import 'package:pobe_new/features/home/widgets/app_header.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
